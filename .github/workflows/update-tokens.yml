@@ -4,14 +4,13 @@ on:
   repository_dispatch:
     types: update-tokens
 
-permissions:
-  pull-requests: write
-  issues: write
-  repository-projects: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      issues: write
+      repository-projects: write
     steps:
       - uses: actions/checkout@v3
 
